@@ -13,7 +13,9 @@ const myLoader = (props) => {
 
 function HeadingOne({ children }) {
   return (
-    <h1 className="bg-yellow-200 md:bg-red-500 sm:bg-indigo-400">{children}</h1>
+    <h1 className="bg-yellow-200 md:bg-red-500 sm:bg-indigo-400 mb-6">
+      {children}
+    </h1>
   );
 }
 
