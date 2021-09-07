@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { RichText } from "prismic-reactjs";
-import queryString from "query-string";
 
 function fromPrismic(url) {
   const path = url.match(/\/[^\/]+$/g);
@@ -12,16 +11,21 @@ const myLoader = (props) => {
   return `https://images.prismic.io/prismic-shows/${props.src}`;
 };
 
+function HeadingOne({ children }) {
+  return (
+    <h1 className="bg-yellow-200 md:bg-red-500 sm:bg-indigo-400">{children}</h1>
+  );
+}
+
 export default function Header({ title, headline, image }) {
-  console.log(fromPrismic(image?.url));
   return (
     <section className="bg-green-100">
-      <div className="container mx-auto py-24">
+      <div className="container mx-auto py-24 flex items-center ">
         <div>
-          <RichText render={title} />
+          <RichText render={title} Component={HeadingOne} />
           <RichText render={headline} />
-          <div className="mt-2">
-            <button>Button 1</button>
+          <div className="mt-6">
+            <button className="bg-yellow-500 p-4 mr-4">Button 1</button>
             <button>Button 2</button>
           </div>
         </div>
@@ -29,7 +33,7 @@ export default function Header({ title, headline, image }) {
           <Image
             alt={image?.alt}
             loader={myLoader}
-            layout="responsive"
+            layout="intrinsic"
             height={image?.dimensions.height}
             width={image?.dimensions.width}
             src={fromPrismic(image?.url)}
