@@ -17,14 +17,14 @@ export default function Stats({
     console.log(items, primary);
     return (
         <section className="bg-gray-50">
-            <div className="container mx-auto py-8 max-w-7xl">
+            <div className="container mx-auto pb-32 pt-24 max-w-7xl">
                 <h2 className="font-semibold text-center text-3xl">{RichText.asText(primary.section_title)}</h2>
-                <div className="grid grid-cols-4 items-center gap-6 pt-12">
+                <div className="grid grid-cols-4 items-center gap-6 pt-8">
                     {
                         items.map((id)=> {
                             return (
-                                <div className="bg-white p-6 rounded shadow-sm">
-                                    <div className="flex">
+                                <div className="bg-white p-5 rounded-lg shadow-sm">
+                                    <div className="flex align-center">
                                         <Image
                                             quality={99}
                                             alt={id.icon.alt}
@@ -35,8 +35,8 @@ export default function Stats({
                                             src={fromPrismic(id.icon.url)}
                                         />
                                         {console.log(id.icon.dimensions.height)}
-                                        <div className="ml-4">
-                                            <p className="text-gray-400">{id.stat_name}</p>
+                                        <div className="ml-5">
+                                            <p className="text-gray-400 text-xs">{id.stat_name}</p>
                                             <p className="font-bold text-2xl">{id.unit + id.amount}</p>
                                         </div>
                                     </div>

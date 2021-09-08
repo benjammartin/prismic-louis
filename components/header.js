@@ -21,12 +21,12 @@ export default function Header({
 }) {
   console.log(primaryCtaLink);
   return (
-    <section className="bg-yellow-200">
+    <section className="bg-green-100">
       <div className="container mx-auto py-24 px-8 max-w-7xl grid grid-cols-2 items-center gap-12">
         <div className="mr-24">
           <h1 className="mb-6 text-7xl font-bold">{RichText.asText(title)}</h1>
           <p className="text-xl">{RichText.asText(headline)}</p>
-          <div className="mt-6">
+          <div className="mt-12">
             <Link passHref href={primaryCtaLink?.url}>
               <a className="bg-green-500 px-10 py-4 mr-4 font-semibold text-white">
                 {primaryCta}
