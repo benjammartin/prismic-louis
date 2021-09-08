@@ -19,7 +19,6 @@ export default function Header({
   primaryCtaLink,
   secondaryCta,
 }) {
-  console.log(primaryCtaLink);
   return (
     <section className="bg-yellow-200">
       <div className="container mx-auto py-24 px-8 max-w-7xl grid grid-cols-2 items-center gap-12">
@@ -40,7 +39,7 @@ export default function Header({
             quality={99}
             alt={image?.alt}
             loader={myLoader}
-            layout="responsive"
+            layout="intrinsic"
             height={image?.dimensions.height}
             width={image?.dimensions.width}
             src={fromPrismic(image?.url)}
