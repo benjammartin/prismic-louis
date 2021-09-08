@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Header from "@components/header";
 import { getHomePage } from "@lib/prismic";
+import SliceZone from "slices";
 
 export default function Home({ content }) {
   return (
@@ -12,6 +13,9 @@ export default function Home({ content }) {
         image={content?.data.hero_image}
         headline={content?.data.headline}
         title={content?.data.title}
+      />
+      <SliceZone
+        slices={content?.data.body}
       />
     </Fragment>
   );
