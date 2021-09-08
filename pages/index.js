@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import Header from "@components/header";
 import { Client, getHomePage } from "@lib/prismic";
-
 export default function Home({ content }) {
   return (
     <Fragment>
@@ -16,11 +15,11 @@ export default function Home({ content }) {
     </Fragment>
   );
 }
-
-export async function getStaticProps({ previewData }) {
-  const content = await getHomePage();
+export async function getStaticProps({ preview, previewData }) {
+  const content = await getHomePage(previewData?.ref);
   return {
     props: {
+      preview,
       content,
     },
   };
