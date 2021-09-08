@@ -17,7 +17,7 @@ export default function Home({ content }) {
   );
 }
 
-export async function getStaticProps({ previewData }) {
+export async function getStaticProps() {
   const content = await getHomePage();
   return {
     props: {
