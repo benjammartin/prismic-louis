@@ -14,9 +14,7 @@ export default function Home({ content }) {
         headline={content?.data.headline}
         title={content?.data.title}
       />
-      <SliceZone
-        slices={content?.data.body}
-      />
+      <SliceZone slices={content?.data.body} />
     </Fragment>
   );
 }
