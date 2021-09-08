@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Header from "@components/header";
-import { Client, getHomePage } from "@lib/prismic";
+import { getHomePage } from "@lib/prismic";
 
 export default function Home({ content }) {
   return (
