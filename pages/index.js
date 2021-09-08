@@ -16,8 +16,7 @@ export default function Home({ content }) {
     </Fragment>
   );
 }
-
-export async function getStaticProps({ preview, previewData }) {
+export async function getStaticProps({ preview = false, previewData }) {
   const content = await getHomePage(previewData?.ref);
   return {
     props: {
