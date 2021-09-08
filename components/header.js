@@ -7,9 +7,8 @@ function fromPrismic(url) {
   return `${path[0]}`;
 }
 
-const myLoader = (props) => {
-  console.log(props);
-  return `https://images.prismic.io/prismic-shows/${props.src}`;
+const myLoader = ({ src, quality = 75, width }) => {
+  return `https://images.prismic.io/prismic-shows/${src}?auto=compress&q=${quality}&w=${width}`;
 };
 
 export default function Header({
@@ -38,9 +37,10 @@ export default function Header({
         </div>
         <div>
           <Image
+            quality={99}
             alt={image?.alt}
             loader={myLoader}
-            layout="intrinsic"
+            layout="responsive"
             height={image?.dimensions.height}
             width={image?.dimensions.width}
             src={fromPrismic(image?.url)}
@@ -50,12 +50,3 @@ export default function Header({
     </section>
   );
 }
-
-/**
- * <Image
-            layout="intrinsic"
-            height={image?.dimensions.height}
-            width={image?.dimensions.width}
-            src={fromPrismic(image?.url)}
-          />
- */

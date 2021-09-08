@@ -1,9 +1,8 @@
 import { Fragment } from "react";
 import Header from "@components/header";
-import { Client } from "@lib/prismic";
+import { Client, getHomePage } from "@lib/prismic";
 
 export default function Home({ content }) {
-  console.log(content);
   return (
     <Fragment>
       <Header
@@ -19,7 +18,7 @@ export default function Home({ content }) {
 }
 
 export async function getStaticProps() {
-  const content = await Client.getSingle("homepage");
+  const content = await getHomePage();
   return {
     props: {
       content,
