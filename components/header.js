@@ -19,9 +19,8 @@ export default function Header({
   primaryCtaLink,
   secondaryCta,
 }) {
-  console.log(primaryCtaLink);
   return (
-    <section className="bg-green-50">
+    <section className="bg-blue-50">
       <div className="container mx-auto py-24 px-8 max-w-7xl grid grid-cols-2 items-center gap-12">
         <div className="mr-24">
           <h1 className="mb-6 text-7xl font-bold">{RichText.asText(title)}</h1>
