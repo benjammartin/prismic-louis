@@ -2,17 +2,14 @@ import { Client, linkResolver } from "@lib/prismic";
 
 const preview = async (req, res) => {
   const redirectingTo = await Client(req)
-    .getPreviewResolver({
-      ref: req?.query?.ref,
-      documentId: req?.query?.documentId,
-    })
+    .getPreviewResolver(req?.query?.token, req?.query?.documentId)
     .resolve(linkResolver, "/");
 
   if (!redirectingTo) {
     return res.status(401).json({ message: "Invalid token" });
   }
 
-  res.setPreviewData({ ref: req?.query?.ref });
+  res.setPreviewData({ ref: req?.query?.token });
 
   res.write(
     `<!DOCTYPE html><html><head><meta http-equiv="Refresh" content="0; url=${redirectingTo}" />

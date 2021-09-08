@@ -17,10 +17,11 @@ export default function Home({ content }) {
   );
 }
 
-export async function getStaticProps({ previewData }) {
-  const content = await getHomePage();
+export async function getStaticProps({ preview, previewData }) {
+  const content = await getHomePage(previewData?.ref);
   return {
     props: {
+      preview,
       content,
     },
   };
