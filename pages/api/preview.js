@@ -8,7 +8,7 @@ const preview = async (req, res) => {
     })
     .resolve(linkResolver, "/");
 
-  if (!redirectingTo) {
+  if (!redirectUrl) {
     return res.status(401).json({ message: "Invalid token" });
   }
 
