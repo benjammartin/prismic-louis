@@ -8,6 +8,7 @@ export default function Home({ content }) {
     <Fragment>
       <Header
         primaryCta={content?.data.cta_link_text}
+        primaryCtaLink={content?.data.cta_link}
         secondaryCta={content?.data.secondary_cta}
         image={content?.data.hero_image}
         headline={content?.data.headline}

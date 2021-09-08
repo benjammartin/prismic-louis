@@ -17,8 +17,10 @@ export default function Header({
   headline,
   image,
   primaryCta,
+  primaryCtaLink,
   secondaryCta,
 }) {
+  console.log(primaryCtaLink);
   return (
     <section className="bg-green-50">
       <div className="container mx-auto py-24 px-8 max-w-7xl grid grid-cols-2 items-center gap-12">
@@ -26,7 +28,7 @@ export default function Header({
           <h1 className="mb-6 text-7xl font-bold">{RichText.asText(title)}</h1>
           <p className="text-xl">{RichText.asText(headline)}</p>
           <div className="mt-6">
-            <Link passHref href="#">
+            <Link passHref href={primaryCtaLink?.url}>
               <a className="bg-green-500 px-10 py-4 mr-4 font-semibold text-white">
                 {primaryCta}
               </a>
