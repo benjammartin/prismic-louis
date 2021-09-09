@@ -3,7 +3,7 @@ import Link from "next/link";
 import { RichText } from "prismic-reactjs";
 
 function fromPrismic(url) {
-  const path = url.match(/\/[^\/]+$/g);
+  const path = url.match(/\/[^\/]+(.png)/g);
   return `${path[0]}`;
 }
 
