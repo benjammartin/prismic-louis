@@ -14,7 +14,6 @@ export default function Stats({
     items,
     primary
 }) {
-    console.log(items, primary);
     return (
         <section className="bg-gray-50">
             <div className="container mx-auto pb-32 pt-24 max-w-7xl">
@@ -24,7 +23,7 @@ export default function Stats({
                         items.map((id)=> {
                             return (
                                 <div className="bg-white p-5 rounded-lg shadow-sm">
-                                    <div className="flex align-center">
+                                    <div className="flex items-start">
                                         <Image
                                             quality={99}
                                             alt={id.icon.alt}
@@ -33,8 +32,8 @@ export default function Stats({
                                             height={id.icon.dimensions.height}
                                             width={id.icon.dimensions.width}
                                             src={fromPrismic(id.icon.url)}
+                                            className="flex-none"
                                         />
-                                        {console.log(id.icon.dimensions.height)}
                                         <div className="ml-5">
                                             <p className="text-gray-400 text-xs">{id.stat_name}</p>
                                             <p className="font-bold text-2xl">{id.unit + id.amount}</p>
